@@ -1,0 +1,17 @@
+{
+    "name": "exmachina/laravel-route-to-js",
+    "description": "Convert laravel's route to json files to be use in Javascript.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jann Paolo Cana",
+            "email": "jpaolo.garcia03@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "ExMachina\\JsRoutes\\": "src/"
+        }
+    }
+}
