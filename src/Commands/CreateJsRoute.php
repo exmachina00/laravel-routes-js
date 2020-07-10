@@ -18,6 +18,7 @@ class CreateJsRoute extends Command
         {--routes=* : Specify routes(string or regexp) to be generated in json file.}
         {--dir= : Directory where generated files will be written.}
         {--exclude : Exclude routes specified in ROUTES parameter.}
+        {--exclude-js : Prevent the generation of action(JS) file.}
     ';
 
     /**
@@ -41,7 +42,7 @@ class CreateJsRoute extends Command
     {
         parent::__construct();
 
-        $this->jsRouteService = new JSRoutes;
+        $this->jsRouteService = $jsRoute;
     }
 
     /**
@@ -51,15 +52,17 @@ class CreateJsRoute extends Command
      */
     public function handle()
     {
-        $this->jsRouteService->setRoutePatterns($this->option('routes'));
+        $this->jsRouteService->setRoutePatterns(
+            $this->option('routes') ?: config('route-js.route.patterns')
+        );
 
-        if ($this->option('exclude')) $this->jsRouteService->excludePatterns();
+        $this->jsRouteService->setPath($this->option('dir') ?: config('route-js.path'));
 
-        if ($this->option('dir')) {
-            $this->jsRouteService->setPath($this->option('dir'));
-        } else {
-            $this->jsRouteService->setStorageDisk('resources');
+        if ($this->option('exclude') || config('route-js.routes.exclude')) {
+            $this->jsRouteService->excludePatterns();
         }
+
+        if ($this->option('exclude-js')) $this->jsRouteService->excludeActionJS();
 
         /**
          * @todo : Append functionality

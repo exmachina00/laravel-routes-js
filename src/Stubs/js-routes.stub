@@ -1,8 +1,3 @@
-/**
- * TODO
- * change path
- * create stub for the path
- */
 import routeList from 'DummyRouteList';
 
 function JsRoute() {
@@ -24,16 +19,7 @@ function JsRoute() {
         let result = route.url;
 
         route.parameters.forEach((param) => {
-            // @todo: Need to check if parameter is optional
-            // if optional and param is not provided, just remove it ?
-            // or param has default value
-            // conditions: if param is optional or has default value
-            // if param has default value, get it
             if (parameters[param] === undefined) {
-
-                // is param optional ? code..
-                // is param has default value ? code..
-
                 throw 'Parameter ' + param + ' is required';
             }
 
@@ -46,16 +32,7 @@ function JsRoute() {
         return result;
     }
 
-    function _isNotOptional(route, param) {
-        return ! isOptional(route, param);
-    }
-
-    function isOptional(route, param) {
-        // determine if param is optional
-        return false;
-    }
-
-    function setRoutes(routes) {
+    this.setRoutes = function (routes) {
         this.routes = routes;
     }
 }

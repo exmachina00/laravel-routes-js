@@ -11,9 +11,13 @@ class JsRoutesServiceProvider extends ServiceProvider
 {
     public function boot()
     {
+        $configPath = __DIR__ . '/../Config/route-js.php';
+
         $this->publishes([
-            __DIR__ . '/Config/route-js.php' => config_path('route-js.php'),
+            $configPath => config_path('route-js.php'),
         ]);
+
+        $this->mergeConfigFrom($configPath, 'route-js');
     }
 
     public function register()
