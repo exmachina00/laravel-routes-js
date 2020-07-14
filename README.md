@@ -63,7 +63,7 @@ This command will generate 2 files, the route list(`laravel-routes.json`) and th
 ## JS Usage
 
 ```javascript
-import { Route } from 'path/to/laravel-route.js';
+import Route from 'path/to/laravel-route.js';
 ```
 
 ### Get URL using named route
@@ -92,7 +92,7 @@ Route.get('address.edit', {id: 1, address_id: 1004})
 You can change the route list by calling `setRoutes` method of `Route` instance
 
 ```javascript
-import { Route } from 'path/to/laravel-route.js';
+import Route from 'path/to/laravel-route.js';
 
 Route.setRoutes( [ { 'route-name': 'url', parameters: []} ] )
 ```
