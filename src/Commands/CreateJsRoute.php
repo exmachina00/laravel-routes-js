@@ -56,7 +56,7 @@ class CreateJsRoute extends Command
             $this->option('routes') ?: config('route-js.route.patterns')
         );
 
-        $this->jsRouteService->setPath($this->option('dir') ?: config('route-js.path'));
+        $this->jsRouteService->setPath($this->option('dir') ?: config('route-js.dir'));
 
         if ($this->option('exclude') || config('route-js.routes.exclude')) {
             $this->jsRouteService->excludePatterns();
