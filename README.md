@@ -9,13 +9,13 @@ Convert Laravel's routes to `json` file to generate URL in Javascript
 ## Installation
 
 ```shell
-composer require exmachina/laravel-route-to-js
+composer require exmachina/laravel-route-js
 ```
 
 In your Laravel `app/config.php`, add the service provider:
 
 ```php
-ExMachina\JSRoutes\Providers\JsRoutesServiceProvider::class
+ExMachina\LaravelRouteJs\Providers\JsRoutesServiceProvider::class
 ```
 
 ## Configuration
@@ -23,7 +23,7 @@ ExMachina\JSRoutes\Providers\JsRoutesServiceProvider::class
 First, publish the default package's configuration:
 
 ```php
-php artisan vendor:publish --provider="ExMachina\JSRoutes\Providers\JsRoutesServiceProvider"
+php artisan vendor:publish --provider="ExMachina\LaravelRouteJs\Providers\JsRoutesServiceProvider"
 ```
 
 The configuration will be published to `config/route-js.php`.
