@@ -1,6 +1,6 @@
 <?php
 
-namespace ExMachina\JSRoutes;
+namespace ExMachina\LaravelRouteJs;
 
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Support\Facades\Route;

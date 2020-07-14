@@ -1,9 +1,9 @@
 <?php
 
-namespace ExMachina\JSRoutes\Providers;
+namespace ExMachina\LaravelRouteJs\Providers;
 
-use ExMachina\JSRoutes\JSRoutes;
-use ExMachina\JSRoutes\Commands\CreateJsRoute;
+use ExMachina\LaravelRouteJs\JSRoutes;
+use ExMachina\LaravelRouteJs\Commands\CreateJsRoute;
 
 use Illuminate\Support\ServiceProvider;
 

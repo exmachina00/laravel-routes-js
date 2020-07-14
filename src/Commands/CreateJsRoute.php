@@ -1,8 +1,8 @@
 <?php
 
-namespace ExMachina\JSRoutes\Commands;
+namespace ExMachina\LaravelRouteJs\Commands;
 
-use ExMachina\JSRoutes\JSRoutes;
+use ExMachina\LaravelRouteJs\JSRoutes;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Route;

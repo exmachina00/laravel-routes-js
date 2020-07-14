@@ -23,7 +23,7 @@ ExMachina\JSRoutes\Providers\JsRoutesServiceProvider::class
 First, publish the default package's configuration:
 
 ```php
-php artisan vendor:publish --vendor="ExMachina\JSRoutes\Providers\JsRoutesServiceProvider"
+php artisan vendor:publish --provider="ExMachina\JSRoutes\Providers\JsRoutesServiceProvider"
 ```
 
 The configuration will be published to `config/route-js.php`.
