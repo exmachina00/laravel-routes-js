@@ -16,7 +16,7 @@ function JsRoute() {
 
         if (route.parameters === undefined) return route.url;
 
-        let result = route.url;
+        let result = '/' + route.url;
 
         route.parameters.forEach((param) => {
             if (parameters[param] === undefined) {
