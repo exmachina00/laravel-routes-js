@@ -6,7 +6,7 @@ function JsRoute() {
     this.get = function (name, parameters = []) {
 
         if (this.routes[name] === undefined) {
-            return '';
+            throw 'Route ' + name + ' is not defined';
         }
 
         return _parseParams(this.routes[name], parameters);
@@ -14,9 +14,9 @@ function JsRoute() {
 
     function _parseParams(route, parameters) {
 
-        if (route.parameters === undefined) return route.url;
-
         let result = '/' + route.url;
+
+        if (route.parameters === undefined) return result;
 
         route.parameters.forEach((param) => {
             if (parameters[param] === undefined) {
