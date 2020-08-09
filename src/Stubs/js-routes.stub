@@ -3,14 +3,30 @@ import routeList from 'DummyRouteList';
 function JsRoute() {
     this.routes = routeList;
     
-    this.get = function (name, parameters = []) {
+    this.get = function (name, parameters = [], rawUrl = false) {
 
         if (this.routes[name] === undefined) {
             throw 'Route ' + name + ' is not defined';
         }
 
+        if (rawUrl) return '/' + this.routes[name].url;
+
         return _parseParams(this.routes[name], parameters);
     };
+
+    /**
+     * Get url without parsing the parameters
+     * Allows us to change the parameter prefix and suffix.
+     * 
+     * @param  String name   
+     * @param  String prefix 
+     * @param  String suffix 
+     * @return String        
+     */
+    this.getRawURL = function (name, prefix = '{', suffix = '}') {
+        return this.get(name, [], true).replace(/\{/g, prefix)
+            .replace(/\}/g, suffix);
+    }
 
     function _parseParams(route, parameters) {
 
