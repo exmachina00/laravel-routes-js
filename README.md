@@ -2,7 +2,7 @@
 Convert Laravel's routes to `json` file to generate URL in Javascript
 
 ## Features
-- Supports Laravel 5.8 and 6.x.
+- Supports Laravel 5.8.x, 6.x, and 7.x
 
 * Allow to specify what routes to be included/excluded.
 
