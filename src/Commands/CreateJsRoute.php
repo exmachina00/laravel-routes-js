@@ -19,6 +19,7 @@ class CreateJsRoute extends Command
         {--dir= : Directory where generated files will be written.}
         {--exclude : Exclude routes specified in ROUTES parameter.}
         {--exclude-js : Prevent the generation of action(JS) file.}
+        {--append : Append routes to existing route list.}
     ';
 
     /**
@@ -64,9 +65,7 @@ class CreateJsRoute extends Command
 
         if ($this->option('exclude-js')) $this->jsRouteService->excludeActionJS();
 
-        /**
-         * @todo : Append functionality
-         */
+        if ($this->option('append')) $this->jsRouteService->append();
 
         $this->jsRouteService->generate();
     }
