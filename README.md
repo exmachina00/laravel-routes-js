@@ -84,6 +84,14 @@ Route.get('profile.edit', {id: 1})
 
 # Laravel route: Route::post('profile/{id}/address/{address_id}').name('address.edit')
 Route.get('address.edit', {id: 1, address_id: 1004})
+
+# Getting route without parsing  the parameters
+# route entry: {'public.user': {url: 'user/{user}', parameters: ["user"]}}
+Route.getRawURL('public.user'); // result: /user/{user}
+
+# Changing prefix and suffix of params
+# getRawURL(routeName, prefix = '{', suffix = '}')
+Route.getRawURL('public.user', ':', ''); // result: /user/:user
 ```
 
 
