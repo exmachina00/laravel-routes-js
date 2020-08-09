@@ -55,8 +55,9 @@ This command will generate 2 files, the route list(`laravel-routes.json`) and th
 | :------------: | ------------------------------------------------------------ |
 |    `--dir`     | Directory where the files will be saved                      |
 |   `--routes`   | Routes to be included when generating route list.<br />String literals or RegExp pattern or both.<br /><br />Can have multiple options for different patterns. <br />e.g(--routes=admin\* --routes=public.index) |
-|  `--exclude`   | When provided, exclude the routes provided in<br / `--routes` option or <br />`routes.patterns` in `config/route-js.ph` |
+|  `--exclude`   | When provided, exclude the routes provided in<br /> `--routes` option or <br />`routes.patterns` in `config/route-js.php` |
 | `--exclude-js` | Only route list will be generate. The JS file that will act upon it will be excluded. |
+|   `--append`   | Append the provides ROUTES to existing route list.           |
 
 
 
